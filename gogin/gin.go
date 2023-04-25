@@ -14,8 +14,10 @@ func m1(c *gin.Context) {
 	start := time.Now()
 	c.Set("name", "rickyyy") // 可以通过c.Set在请求上下文中设置值，后续的处理函数能够取到该值
 
-	//c.Next() // 执行当前请求的后续的操作，既调用m2
-	c.Abort() // 不调用后续处理请求的函数,但是会执行完当前函数。
+	//c.Next() // 执行当前请求的后续的操作，即调用m2, 执行完后返回此处
+	c.Abort() // 不调用后续请求处理函数,但是会执行完当前函数。
+	//return  // 不执行完当前函数，后续会继续调用请求处理函数，即m2
+
 	//如果不想执行当前函数后续流程需要使用return
 	cost := time.Since(start) // 计算耗时
 	fmt.Println("time costs", cost)
@@ -29,7 +31,7 @@ func m2(c *gin.Context) {
 
 func S() {
 	r := gin.Default()
-	r.Use(m1, m2, authMiddleware()) //全局三个注册中间件
+	//r.Use(m1, m2, authMiddleware()) //全局三个注册中间件
 	r.GET("/index", func(c *gin.Context) {
 		fmt.Println("indexhandler...")
 		c.JSON(http.StatusOK, gin.H{

@@ -2,86 +2,42 @@ package main
 
 import (
 	"fmt"
-	"sync"
-	"time"
+	_ "net/http/pprof"
+	"regexp"
+	"strings"
 )
 
-type sayer interface { //define a interface
-	say()
-}
-
-//define a struct realizing interface sayer
-type cat struct{}
-type dog struct{}
-
-func (c *cat) say() {
-
-}
-func (d dog) say() {
-
-}
-
-//define a function that can accept the variable implementing the interface sayer
-func hit(arg sayer) {
-	arg.say()
-}
-
-var s1 ss
-
-type ss struct {
-	m map[int]int
-}
-
-var mmm sync.Map
-
-var Mm = map[int]int{
-	1: 1,
-}
+var datas []string
 
 func main() {
-	ch := make(chan int, 5)
-	go test(ch)
+	var m map[string]string
+	m["fwef"] = "fwefwe"
 
-	for {
-		if v, ok := <-ch; ok {
-			fmt.Println("get val: ", v, ok)
+	fmt.Println(m["ffwef"])
+
+	str := `{state:{NoUnkeyedLiterals:{} DoNotCompare:[] DoNotCopy:[] atomicMessageInfo:0xc0000302c0} sizeCache:0 unknownFields:[] MsgId:33010000010064821682232416061 Uuid:3301000001006482 ProductCode:NVR EventTime:1682232416 Data:fields:{key:\"alarm_event\"  value:{struct_value:{fields:{key:\"channel\"  value:{number_value:0}}  fields:{key:\"event_id\"  value:{string_value:\"1682232416\"}}  fields:{key:\"event_start\"  value:{string_value:\"1682232416\"}}  fields:{key:\"event_type\"  value:{number_value:8}}  fields:{key:\"report_type\"  value:{number_value:1}}}}} Type:DEVICE_REPORT AppId:121}`
+	fmt.Println(len([]byte(str)))
+}
+
+func parseStr(str string, m map[string]interface{}) string {
+	// \$\[([^\]]+)\]|\$\{([^}]+)\}
+	res := regexp.MustCompile(`\$\[([^\]]+)\]|\$\{([^}]+)\}`).FindAllStringSubmatch(str, -1)
+	for _, match := range res {
+		if v, ok := m[match[1]]; ok {
+			str = strings.ReplaceAll(str, match[0], fmt.Sprintf("%v", v))
 		} else {
-			fmt.Println("done")
-			break
+			str = strings.ReplaceAll(str, match[0], "")
 		}
 	}
-	//git blame
-}
-
-func test(ch chan int) {
-	for i := 0; i < 5; i++ {
-		ch <- i
+	res = regexp.MustCompile(`\$\[(.*?)\]`).FindAllStringSubmatch(str, -1)
+	for _, match := range res {
+		if v, ok := m[match[1]]; ok {
+			str = strings.ReplaceAll(str, match[0], fmt.Sprintf("%v", v))
+		} else {
+			str = strings.ReplaceAll(str, match[0], "")
+		}
 	}
 
-	time.Sleep(10 * time.Second)
-	close(ch)
-	fmt.Println("put in done")
-}
-
-func t() {
-	for i := 0; i < 10; i++ {
-		go fmt.Println(i)
-	}
-
-	time.Sleep(3 * time.Second)
-	fmt.Println("---")
-	for i := 0; i < 10; i++ {
-		go func(i int) {
-			fmt.Println(i)
-		}(i)
-	}
-
-	time.Sleep(3 * time.Second)
-	fmt.Println("---")
-	for i := 0; i < 20; i++ {
-		go func() {
-			j := i
-			fmt.Println(j)
-		}()
-	}
+	str = regexp.MustCompile(`\s+`).ReplaceAllString(str, " ")
+	return strings.TrimSpace(str)
 }
