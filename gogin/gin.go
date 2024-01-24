@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-//定义一个中间件，统计请求处理函数的耗时
+// 定义一个中间件，统计请求处理函数的耗时
 func m1(c *gin.Context) {
 	// 做些请求前的操作
 	fmt.Println("go into m1...")
@@ -20,7 +20,7 @@ func m1(c *gin.Context) {
 
 	//如果不想执行当前函数后续流程需要使用return
 	cost := time.Since(start) // 计算耗时
-	fmt.Println("time costs", cost)
+	fmt.Println("timex costs", cost)
 }
 
 func m2(c *gin.Context) {
@@ -41,7 +41,7 @@ func S() {
 	r.Run(":9090")
 }
 
-//通常中间件不会写成函数的形式，而是使用闭包来实现。
+// 通常中间件不会写成函数的形式，而是使用闭包来实现。
 func authMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		fmt.Println("go into auth")
