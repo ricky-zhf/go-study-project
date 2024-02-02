@@ -10,9 +10,6 @@ import (
 	"os"
 )
 
-type Pusher interface {
-}
-
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
