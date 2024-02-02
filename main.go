@@ -52,19 +52,21 @@ func sendGPTRequest(inputText string) (string, error) {
 		api_key  = "sk-LfBYwIIyuExut9xUkBhksU2vghyAhoe7npPGrPIILeGl8zim"
 	)
 
+	msg := Messages{
+		Role:    "user",
+		Content: inputText,
+	}
 	payload, err := json.Marshal(Req{
 		Model: "gpt-3.5-turbo",
-		Msg: []Messages{{
-			Role:    "user",
-			Content: inputText,
-		}}})
+		Msg:   []Messages{msg},
+	})
 	if err != nil {
-		return "", fmt.Errorf("marshal failed. err:", err)
+		return "", fmt.Errorf("marshal failed. %v", err)
 	}
 
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(payload))
 	if err != nil {
-		return "", fmt.Errorf("new request failed. err:", err)
+		return "", fmt.Errorf("new request failed. %v", err)
 	}
 	req.Header.Set("Authorization", "Bearer "+api_key)
 	req.Header.Set("Content-Type", "application/json")
@@ -76,16 +78,16 @@ func sendGPTRequest(inputText string) (string, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		return "", fmt.Errorf("req failed. code:%v", resp.Status)
+		return "", fmt.Errorf("req failed. %v", resp.Status)
 	}
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return "", fmt.Errorf("read failed: %v\n", err)
+		return "", fmt.Errorf("read failed. %v", err)
 	}
 
 	err = json.Unmarshal(body, &response)
 	if err != nil {
-		return "", fmt.Errorf("unmarshal failed: %v", err)
+		return "", fmt.Errorf("unmarshal failed. %v", err)
 	}
 
 	return response.Choices[0].Message.Content, nil
