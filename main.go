@@ -1,116 +1,33 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
-	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
-	"os"
 )
 
+type st struct {
+	name string
+}
+
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	for {
-		fmt.Print("You:")
-		scanner.Scan()
-		input := scanner.Text()
-		if input == "exit" {
-			break
-		}
-		output, err := sendGPTRequest(input)
-		if err != nil {
-			fmt.Printf("Failed. %v\n", err)
-			continue
-		}
+	sli := make([]int, 2)
+	sli[0], sli[1] = 1, 2
+	fmt.Printf("sli=%v|cap=%v|p=%p\n", sli, cap(sli), sli)
 
-		fmt.Println("GPT:", output)
-	}
-}
+	sli = append(sli, 3)
+	fmt.Printf("加3后，新的sli=%v|cap=%v|新的p=%p\n", sli, cap(sli), sli)
+	fmt.Println()
 
-var client = &http.Client{}
+	sli2 := append(sli, 4)
+	fmt.Printf("加4后，原来sli=%v|原来p=%p\n", sli, sli)
+	fmt.Printf("加4后，新的sli2=%v|新的p2=%p\n", sli2, sli2)
+	fmt.Println()
 
-type Req struct {
-	Model string     `json:"model"`
-	Msg   []Messages `json:"messages"`
-}
+	sli3 := append(sli, 5, 6, 7)
+	fmt.Printf("加567后，原来sli=%v|cap=%v|原来p=%p\n", sli, cap(sli), sli)
+	fmt.Printf("加567后，原来sli3=%v|cap3=%v|原来p3=%p\n", sli3, cap(sli3), sli3)
+	fmt.Println()
 
-type Messages struct {
-	Role    string `json:"role"`
-	Content string `json:"content"`
-}
-
-func sendGPTRequest(inputText string) (string, error) {
-	//url := "https://api.openai.com/v1/chat/completions"
-	var (
-		response ApifoxModel
-		url      = "https://api.chatanywhere.com.cn/v1/chat/completions"
-		api_key  = "sk-LfBYwIIyuExut9xUkBhksU2vghyAhoe7npPGrPIILeGl8zim"
-	)
-
-	msg := Messages{
-		Role:    "user",
-		Content: inputText,
-	}
-	payload, err := json.Marshal(Req{
-		Model: "gpt-3.5-turbo",
-		Msg:   []Messages{msg},
-	})
-	if err != nil {
-		return "", fmt.Errorf("marshal failed. %v", err)
-	}
-
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(payload))
-	if err != nil {
-		return "", fmt.Errorf("new request failed. %v", err)
-	}
-	req.Header.Set("Authorization", "Bearer "+api_key)
-	req.Header.Set("Content-Type", "application/json")
-
-	resp, err := client.Do(req)
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != 200 {
-		return "", fmt.Errorf("req failed. %v", resp.Status)
-	}
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", fmt.Errorf("read failed. %v", err)
-	}
-
-	err = json.Unmarshal(body, &response)
-	if err != nil {
-		return "", fmt.Errorf("unmarshal failed. %v", err)
-	}
-
-	return response.Choices[0].Message.Content, nil
-}
-
-type ApifoxModel struct {
-	Choices []Choice `json:"choices"`
-	Created int64    `json:"created"`
-	ID      string   `json:"id"`
-	Object  string   `json:"object"`
-	Usage   Usage    `json:"usage"`
-}
-
-type Choice struct {
-	FinishReason *string  `json:"finish_reason,omitempty"`
-	Index        *int64   `json:"index,omitempty"`
-	Message      *Message `json:"message,omitempty"`
-}
-
-type Message struct {
-	Content string `json:"content"`
-	Role    string `json:"role"`
-}
-
-type Usage struct {
-	CompletionTokens int64 `json:"completion_tokens"`
-	PromptTokens     int64 `json:"prompt_tokens"`
-	TotalTokens      int64 `json:"total_tokens"`
+	sli = append(sli, 8, 9, 0)
+	fmt.Printf("加890后，sli=%v|p=%p\n", sli, sli)
+	fmt.Printf("加890后，sli3=%v|p=%p\n", sli3, sli3)
 }
