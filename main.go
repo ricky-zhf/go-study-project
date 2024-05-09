@@ -30,4 +30,6 @@ func main() {
 	sli = append(sli, 8, 9, 0)
 	fmt.Printf("加890后，sli=%v|p=%p\n", sli, sli)
 	fmt.Printf("加890后，sli3=%v|p=%p\n", sli3, sli3)
+
+	// test merge
 }
