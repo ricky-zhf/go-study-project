@@ -2,34 +2,36 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
-type st struct {
-	name string
+func main() {
+	frequent := topKFrequent([]int{1, 2, 2, 3, 2, 12, 1, 11, 2, 2, 1, 2, 3, 3, 12, 31, 3, 312, 1, 31, 1, 3, 3, 2, 2, 2}, 5)
+	fmt.Println(frequent)
 }
 
-func main() {
-	sli := make([]int, 2)
-	sli[0], sli[1] = 1, 2
-	fmt.Printf("sli=%v|cap=%v|p=%p\n", sli, cap(sli), sli)
+type freq struct {
+	num      int
+	frequent int
+}
 
-	sli = append(sli, 3)
-	fmt.Printf("加3后，新的sli=%v|cap=%v|新的p=%p\n", sli, cap(sli), sli)
-	fmt.Println()
-
-	sli2 := append(sli, 4)
-	fmt.Printf("加4后，原来sli=%v|原来p=%p\n", sli, sli)
-	fmt.Printf("加4后，新的sli2=%v|新的p2=%p\n", sli2, sli2)
-	fmt.Println()
-
-	sli3 := append(sli, 5, 6, 7)
-	fmt.Printf("加567后，原来sli=%v|cap=%v|原来p=%p\n", sli, cap(sli), sli)
-	fmt.Printf("加567后，原来sli3=%v|cap3=%v|原来p3=%p\n", sli3, cap(sli3), sli3)
-	fmt.Println()
-
-	sli = append(sli, 8, 9, 0)
-	fmt.Printf("加890后，sli=%v|p=%p\n", sli, sli)
-	fmt.Printf("加890后，sli3=%v|p=%p\n", sli3, sli3)
-
-	// test merge
+func topKFrequent(nums []int, k int) []int {
+	freqMap := make(map[int]int) // num : freq
+	for _, v := range nums {
+		freqMap[v]++
+	}
+	fmt.Println(freqMap)
+	var res []freq
+	for k, v := range freqMap {
+		res = append(res, freq{num: k, frequent: v})
+	}
+	sort.Slice(res, func(i, j int) bool {
+		return res[i].frequent > res[j].frequent
+	})
+	fmt.Println(res)
+	var resNum []int
+	for _, v := range res {
+		resNum = append(resNum, v.num)
+	}
+	return resNum[:k+1]
 }
