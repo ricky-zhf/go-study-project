@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/hibiken/asynq"
+	"github.com/pkg/errors"
 	"log"
 	"time"
 )
@@ -64,7 +65,7 @@ func HandleEmailDeliveryTask(ctx context.Context, t *asynq.Task) error {
 	}
 	log.Printf("Sending Email to User: user_id=%d, template_id=%s", p.UserID, p.TemplateID)
 	// Email delivery code ...
-	return nil
+	return errors.New("failed")
 }
 
 // ImageProcessor implements asynq.Handler interface.

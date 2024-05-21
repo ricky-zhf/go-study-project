@@ -1,4 +1,4 @@
-package main
+package saas
 
 import (
 	"encoding/json"
@@ -263,7 +263,7 @@ func translateToThai(data interface{}) {
 	}
 }
 
-func main() {
+func d() {
 	// Read the JSON file
 	inputFile := "/Users/zhouhuaifeng/Desktop/Untitled-1.txt"
 	outputFile := "/Users/zhouhuaifeng/Desktop/Untitled-2.txt"
