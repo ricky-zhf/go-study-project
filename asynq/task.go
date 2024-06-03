@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/hibiken/asynq"
 	"github.com/pkg/errors"
+	"google.golang.org/protobuf/runtime/protoimpl"
 	"log"
 	"time"
 )
@@ -63,14 +64,25 @@ func HandleEmailDeliveryTask(ctx context.Context, t *asynq.Task) error {
 	if err := json.Unmarshal(t.Payload(), &p); err != nil {
 		return fmt.Errorf("json.Unmarshal failed: %v: %w", err, asynq.SkipRetry)
 	}
-	log.Printf("Sending Email to User: user_id=%d, template_id=%s", p.UserID, p.TemplateID)
+	log.Printf("V1====Sending Email to User: user_id=%d, template_id=%s", p.UserID, p.TemplateID)
+	// Email delivery code ...
+	return errors.New("failed")
+}
+
+// HandleEmailDeliveryTaskV2 发送邮件
+func HandleEmailDeliveryTaskV2(ctx context.Context, t *asynq.Task) error {
+	var p EmailDeliveryPayload
+	if err := json.Unmarshal(t.Payload(), &p); err != nil {
+		return fmt.Errorf("json.Unmarshal failed: %v: %w", err, asynq.SkipRetry)
+	}
+	log.Printf("V2====Sending Email to User: user_id=%d, template_id=%s", p.UserID, p.TemplateID)
 	// Email delivery code ...
 	return errors.New("failed")
 }
 
 // ImageProcessor implements asynq.Handler interface.
 type ImageProcessor struct {
-	// ... fields for struct
+	// ... fields for structa
 }
 
 func (processor *ImageProcessor) ProcessTask(ctx context.Context, t *asynq.Task) error {
@@ -85,4 +97,33 @@ func (processor *ImageProcessor) ProcessTask(ctx context.Context, t *asynq.Task)
 
 func NewImageProcessor() *ImageProcessor {
 	return &ImageProcessor{}
+}
+
+// saas test
+type UseCouponRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId       int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`                   // 用户ID
+	Uuid         string `protobuf:"bytes,2,opt,name=uuid,proto3" json:"uuid,omitempty"`                                      // 设备ID
+	PackageId    int64  `protobuf:"varint,3,opt,name=package_id,json=packageId,proto3" json:"package_id,omitempty"`          // 套餐ID
+	CouponId     int64  `protobuf:"varint,4,opt,name=coupon_id,json=couponId,proto3" json:"coupon_id,omitempty"`             // 优惠券ID
+	OrderNo      string `protobuf:"bytes,5,opt,name=order_no,json=orderNo,proto3" json:"order_no,omitempty"`                 // 订单号
+	PackagePrice int64  `protobuf:"varint,6,opt,name=package_price,json=packagePrice,proto3" json:"package_price,omitempty"` // 套餐价格 * 100
+}
+
+func NewUserCouponRequestTask() (*asynq.Task, error) {
+	payload, err := json.Marshal(UseCouponRequest{
+		UserId:       11111,
+		Uuid:         "43534",
+		PackageId:    345,
+		CouponId:     534,
+		OrderNo:      "3453434",
+		PackagePrice: 1123,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return asynq.NewTask("LABJ-Task-UseCoupon", payload), nil
 }
