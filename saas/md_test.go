@@ -42,3 +42,7 @@ func TestMd5Encode(t *testing.T) {
 	fmt.Println("解析:", encode)
 	fmt.Println("传参:", sign)
 }
+
+func TestAdminUpdate(t *testing.T) {
+	run()
+}

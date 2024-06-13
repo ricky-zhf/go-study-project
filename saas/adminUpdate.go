@@ -1,4 +1,4 @@
-package main
+package saas
 
 import (
 	"encoding/json"
@@ -19,7 +19,7 @@ var (
 // 假设这是从某处获取的SQL更新语句数组
 //var sqlUpdates = []string{}
 
-func main() {
+func run() {
 	// 将SQL语句转换为JSON格式
 	sql := strings.Split(str, "\n")
 	//fmt.Println(sql)
