@@ -44,5 +44,7 @@ func TestMd5Encode(t *testing.T) {
 }
 
 func TestAdminUpdate(t *testing.T) {
-	run()
+	//run()
+
+	do()
 }
