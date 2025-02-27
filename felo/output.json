@@ -1,0 +1,779 @@
+{
+    "balance_popup_click": {
+        "event": "no_enough_coin_pop"
+    },
+    "balance_popup_show": {
+        "event": "no_enough_coin_pop"
+    },
+    "browse_higo_opening_ceremony_page": {
+        "event": "hiyachat_event"
+    },
+    "change_chat_intimacy_level": {
+        "event": "hiyachat_event"
+    },
+    "change_chat_intimacy_points": {
+        "event": "hiyachat_event"
+    },
+    "check_country_white": {
+        "event": "hiyachat_event"
+    },
+    "click_call_item_video": {
+        "event": "hiyachat_event"
+    },
+    "click_chat_intimacy_btn": {
+        "event": "hiyachat_event"
+    },
+    "click_chat_intimacy_reward": {
+        "event": "hiyachat_event"
+    },
+    "click_cp_avatar": {
+        "event": "hiyachat_event"
+    },
+    "click_event_video_chat_page": {
+        "event": "hiyachat_event"
+    },
+    "click_higo_opening_ceremony_page": {
+        "event": "hiyachat_event"
+    },
+    "click_message": {
+        "event": "text_chat"
+    },
+    "click_wallet_page_new": {
+        "event": "hiyachat_event"
+    },
+    "clk_quick_recharge_popup_web": {
+        "event": "hiyachat_event"
+    },
+    "create_session": {
+        "event": "text_chat"
+    },
+    "detainment_popup_clk": {
+        "event": "hiyachat_event"
+    },
+    "detainment_popup_exp": {
+        "event": "hiyachat_event"
+    },
+    "facetime_reward": {
+        "event": "hiyachat_event"
+    },
+    "get_cp_commision": {
+        "event": "hiyachat_event"
+    },
+    "get_in_low_data_status": {
+        "event": "hiyachat_event"
+    },
+    "get_points": {
+        "event": "hiyachat_event"
+    },
+    "gift_show": {
+        "event": "hiyachat_event"
+    },
+    "limit_broadcaster_mission_exp": {
+        "event": "hiyachat_event"
+    },
+    "limit_broadcaster_mission_suss": {
+        "event": "hiyachat_event"
+    },
+    "receive_strategy_msg": {
+        "event": "hiyachat_event"
+    },
+    "recieve_gift_reward": {
+        "event": "hiyachat_event"
+    },
+    "send_cp_online_push": {
+        "event": "hiyachat_event"
+    },
+    "send_free_msg": {
+        "event": "hiyachat_event"
+    },
+    "send_match_card": {
+        "event": "hiyachat_event"
+    },
+    "send_message": {
+        "event": "text_chat"
+    },
+    "send_quick_word": {
+        "event": "text_chat"
+    },
+    "send_strategy_msg": {
+        "event": "hiyachat_event"
+    },
+    "show_chat_intimacy_home": {
+        "event": "hiyachat_event"
+    },
+    "show_cp_online_push": {
+        "event": "hiyachat_event"
+    },
+    "show_facetime_reward_page": {
+        "event": "hiyachat_event"
+    },
+    "show_higo_opening_ceremony_entrance": {
+        "event": "hiyachat_event"
+    },
+    "show_higo_opening_ceremony_page": {
+        "event": "hiyachat_event"
+    },
+    "show_higo_opening_ceremony_partylist_popup": {
+        "event": "hiyachat_event"
+    },
+    "show_higo_opening_ceremony_task_popup": {
+        "event": "hiyachat_event"
+    },
+    "show_intimacy_commision": {
+        "event": "hiyachat_event"
+    },
+    "show_intimacy_reward_popup": {
+        "event": "hiyachat_event"
+    },
+    "show_people_list": {
+        "event": "text_chat"
+    },
+    "show_quick_recharge_popup_web": {
+        "event": "hiyachat_event"
+    },
+    "system_message": {
+        "event": "text_chat"
+    },
+    "third_recharge_check_pop_clk": {
+        "event": "hiyachat_event"
+    },
+    "third_recharge_check_pop_exp": {
+        "event": "hiyachat_event"
+    },
+    "time_limit_popup_clk": {
+        "event": "hiyachat_event"
+    },
+    "time_limit_popup_exp": {
+        "event": "hiyachat_event"
+    },
+    "todo===10": {
+        "event": "hiyachat_event"
+    },
+    "todo===100": {
+        "event": "recharge_feedback"
+    },
+    "todo===101": {
+        "event": "recharge_feedback"
+    },
+    "todo===102": {
+        "event": "recharge_feedback"
+    },
+    "todo===103": {
+        "event": "recharge_feedback"
+    },
+    "todo===104": {
+        "event": "recharge_feedback"
+    },
+    "todo===106": {
+        "event": "hiyachat_event"
+    },
+    "todo===107": {
+        "event": "hiyachat_event"
+    },
+    "todo===109": {
+        "event": "hiyachat_event"
+    },
+    "todo===11": {
+        "event": "hiyachat_event"
+    },
+    "todo===110": {
+        "event": "hiyachat_event"
+    },
+    "todo===111": {
+        "event": "hiyachat_event"
+    },
+    "todo===113": {
+        "event": "hiyachat_event"
+    },
+    "todo===114": {
+        "event": "hiyachat_event"
+    },
+    "todo===116": {
+        "event": "hiyachat_event"
+    },
+    "todo===117": {
+        "event": "hiyachat_event"
+    },
+    "todo===12": {
+        "event": "hiyachat_event"
+    },
+    "todo===120": {
+        "event": "hiyachat_event"
+    },
+    "todo===122": {
+        "event": "hiyachat_event"
+    },
+    "todo===124": {
+        "event": "hiyachat_event"
+    },
+    "todo===126": {
+        "event": "hiyachat_event"
+    },
+    "todo===127": {
+        "event": "hiyachat_event"
+    },
+    "todo===129": {
+        "event": "text_chat"
+    },
+    "todo===13": {
+        "event": "hiyachat_event"
+    },
+    "todo===130": {
+        "event": "text_chat"
+    },
+    "todo===131": {
+        "event": "text_chat"
+    },
+    "todo===132": {
+        "event": "text_chat"
+    },
+    "todo===133": {
+        "event": "text_chat"
+    },
+    "todo===134": {
+        "event": "text_chat"
+    },
+    "todo===135": {
+        "event": "text_chat"
+    },
+    "todo===136": {
+        "event": "text_chat"
+    },
+    "todo===137": {
+        "event": "text_chat"
+    },
+    "todo===138": {
+        "event": "text_chat"
+    },
+    "todo===139": {
+        "event": "text_chat"
+    },
+    "todo===14": {
+        "event": "hiyachat_event"
+    },
+    "todo===140": {
+        "event": "text_chat"
+    },
+    "todo===141": {
+        "event": "text_chat"
+    },
+    "todo===142": {
+        "event": "text_chat"
+    },
+    "todo===143": {
+        "event": "text_chat"
+    },
+    "todo===144": {
+        "event": "text_chat"
+    },
+    "todo===145": {
+        "event": "text_chat"
+    },
+    "todo===146": {
+        "event": "text_chat"
+    },
+    "todo===147": {
+        "event": "text_chat"
+    },
+    "todo===148": {
+        "event": "text_chat"
+    },
+    "todo===149": {
+        "event": "text_chat"
+    },
+    "todo===150": {
+        "event": "text_chat"
+    },
+    "todo===151": {
+        "event": "text_chat"
+    },
+    "todo===152": {
+        "event": "text_chat"
+    },
+    "todo===153": {
+        "event": "text_chat"
+    },
+    "todo===154": {
+        "event": "text_chat"
+    },
+    "todo===155": {
+        "event": "text_chat"
+    },
+    "todo===156": {
+        "event": "text_chat"
+    },
+    "todo===157": {
+        "event": "text_chat"
+    },
+    "todo===159": {
+        "event": "text_chat"
+    },
+    "todo===160": {
+        "event": "text_chat"
+    },
+    "todo===163": {
+        "event": "text_chat"
+    },
+    "todo===165": {
+        "event": "text_chat"
+    },
+    "todo===166": {
+        "event": "text_chat"
+    },
+    "todo===167": {
+        "event": "text_chat"
+    },
+    "todo===168": {
+        "event": "text_chat"
+    },
+    "todo===169": {
+        "event": "text_chat"
+    },
+    "todo===170": {
+        "event": "text_chat"
+    },
+    "todo===171": {
+        "event": "text_chat"
+    },
+    "todo===172": {
+        "event": "text_chat"
+    },
+    "todo===173": {
+        "event": "text_chat"
+    },
+    "todo===174": {
+        "event": "text_chat"
+    },
+    "todo===175": {
+        "event": "text_chat"
+    },
+    "todo===176": {
+        "event": "text_chat"
+    },
+    "todo===178": {
+        "event": "text_chat"
+    },
+    "todo===179": {
+        "event": "text_chat"
+    },
+    "todo===181": {
+        "event": "hiyachat_event"
+    },
+    "todo===182": {
+        "event": "hiyachat_event"
+    },
+    "todo===183": {
+        "event": "hiyachat_event"
+    },
+    "todo===184": {
+        "event": "hiyachat_event"
+    },
+    "todo===185": {
+        "event": "hiyachat_event"
+    },
+    "todo===186": {
+        "event": "hiyachat_event"
+    },
+    "todo===187": {
+        "event": "hiyachat_event"
+    },
+    "todo===188": {
+        "event": "hiyachat_event"
+    },
+    "todo===189": {
+        "event": "hiyachat_event"
+    },
+    "todo===19": {
+        "event": "hiyachat_event"
+    },
+    "todo===190": {
+        "event": "hiyachat_event"
+    },
+    "todo===191": {
+        "event": "hiyachat_event"
+    },
+    "todo===192": {
+        "event": "hiyachat_event"
+    },
+    "todo===193": {
+        "event": "hiyachat_event"
+    },
+    "todo===194": {
+        "event": "hiyachat_event"
+    },
+    "todo===195": {
+        "event": "hiyachat_event"
+    },
+    "todo===196": {
+        "event": "hiyachat_event"
+    },
+    "todo===197": {
+        "event": "hiyachat_event"
+    },
+    "todo===198": {
+        "event": "hiyachat_event"
+    },
+    "todo===199": {
+        "event": "hiyachat_event"
+    },
+    "todo===2": {
+        "event": "hiyachat_event"
+    },
+    "todo===20": {
+        "event": "hiyachat_event"
+    },
+    "todo===200": {
+        "event": "hiyachat_event"
+    },
+    "todo===201": {
+        "event": "hiyachat_event"
+    },
+    "todo===203": {
+        "event": "hiyachat_event"
+    },
+    "todo===204": {
+        "event": "hiyachat_event"
+    },
+    "todo===205": {
+        "event": "hiyachat_event"
+    },
+    "todo===207": {
+        "event": "hiyachat_event"
+    },
+    "todo===209": {
+        "event": "hiyachat_event"
+    },
+    "todo===21": {
+        "event": "hiyachat_event"
+    },
+    "todo===210": {
+        "event": "hiyachat_event"
+    },
+    "todo===211": {
+        "event": "hiyachat_event"
+    },
+    "todo===212": {
+        "event": "hiyachat_event"
+    },
+    "todo===213": {
+        "event": "hiyachat_event"
+    },
+    "todo===214": {
+        "event": "hiyachat_event"
+    },
+    "todo===215": {
+        "event": "hiyachat_event"
+    },
+    "todo===216": {
+        "event": "hiyachat_event"
+    },
+    "todo===217": {
+        "event": "hiyachat_event"
+    },
+    "todo===218": {
+        "event": "hiyachat_event"
+    },
+    "todo===22": {
+        "event": "hiyachat_event"
+    },
+    "todo===221": {
+        "event": "no_enough_coin_pop"
+    },
+    "todo===223": {
+        "event": "hiyachat_event"
+    },
+    "todo===224": {
+        "event": "hiyachat_event"
+    },
+    "todo===225": {
+        "event": "hiyachat_event"
+    },
+    "todo===226": {
+        "event": "hiyachat_event"
+    },
+    "todo===227": {
+        "event": "hiyachat_event"
+    },
+    "todo===228": {
+        "event": "hiyachat_event"
+    },
+    "todo===229": {
+        "event": "hiyachat_event"
+    },
+    "todo===23": {
+        "event": "hiyachat_event"
+    },
+    "todo===230": {
+        "event": "hiyachat_event"
+    },
+    "todo===231": {
+        "event": "hiyachat_event"
+    },
+    "todo===232": {
+        "event": "hiyachat_event"
+    },
+    "todo===233": {
+        "event": "hiyachat_event"
+    },
+    "todo===234": {
+        "event": "hiyachat_event"
+    },
+    "todo===235": {
+        "event": "hiyachat_event"
+    },
+    "todo===236": {
+        "event": "hiyachat_event"
+    },
+    "todo===237": {
+        "event": "hiyachat_event"
+    },
+    "todo===238": {
+        "event": "hiyachat_event"
+    },
+    "todo===239": {
+        "event": "hiyachat_event"
+    },
+    "todo===240": {
+        "event": "hiyachat_event"
+    },
+    "todo===243": {
+        "event": "hiyachat_event"
+    },
+    "todo===244": {
+        "event": "hiyachat_event"
+    },
+    "todo===245": {
+        "event": "hiyachat_event"
+    },
+    "todo===246": {
+        "event": "hiyachat_event"
+    },
+    "todo===248": {
+        "event": "hiyachat_event"
+    },
+    "todo===249": {
+        "event": "hiyachat_event"
+    },
+    "todo===25": {
+        "event": "hiyachat_event"
+    },
+    "todo===250": {
+        "event": "hiyachat_event"
+    },
+    "todo===251": {
+        "event": "hiyachat_event"
+    },
+    "todo===253": {
+        "event": "hiyachat_event"
+    },
+    "todo===254": {
+        "event": "hiyachat_event"
+    },
+    "todo===255": {
+        "event": "hiyachat_event"
+    },
+    "todo===257": {
+        "event": "hiyachat_event"
+    },
+    "todo===258": {
+        "event": "hiyachat_event"
+    },
+    "todo===26": {
+        "event": "hiyachat_event"
+    },
+    "todo===260": {
+        "event": "hiyachat_event"
+    },
+    "todo===261": {
+        "event": "hiyachat_event"
+    },
+    "todo===27": {
+        "event": "hiyachat_event"
+    },
+    "todo===28": {
+        "event": "hiyachat_event"
+    },
+    "todo===29": {
+        "event": "hiyachat_event"
+    },
+    "todo===3": {
+        "event": "hiyachat_event"
+    },
+    "todo===30": {
+        "event": "hiyachat_event"
+    },
+    "todo===31": {
+        "event": "hiyachat_event"
+    },
+    "todo===33": {
+        "event": "hiyachat_event"
+    },
+    "todo===34": {
+        "event": "hiyachat_event"
+    },
+    "todo===35": {
+        "event": "hiyachat_event"
+    },
+    "todo===36": {
+        "event": "hiyachat_event"
+    },
+    "todo===37": {
+        "event": "hiyachat_event"
+    },
+    "todo===38": {
+        "event": "hiyachat_event"
+    },
+    "todo===39": {
+        "event": "hiyachat_event"
+    },
+    "todo===4": {
+        "event": "hiyachat_event"
+    },
+    "todo===43": {
+        "event": "hiyachat_event"
+    },
+    "todo===45": {
+        "event": "hiyachat_event"
+    },
+    "todo===46": {
+        "event": "hiyachat_event"
+    },
+    "todo===47": {
+        "event": "hiyachat_event"
+    },
+    "todo===48": {
+        "event": "hiyachat_event"
+    },
+    "todo===5": {
+        "event": "hiyachat_event"
+    },
+    "todo===53": {
+        "event": "get_coins"
+    },
+    "todo===54": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===55": {
+        "event": "order_event"
+    },
+    "todo===56": {
+        "event": "order_event"
+    },
+    "todo===57": {
+        "event": "order_event"
+    },
+    "todo===58": {
+        "event": "order_event"
+    },
+    "todo===59": {
+        "event": "order_event"
+    },
+    "todo===6": {
+        "event": "hiyachat_event"
+    },
+    "todo===60": {
+        "event": "order_event"
+    },
+    "todo===61": {
+        "event": "order_event"
+    },
+    "todo===62": {
+        "event": "order_event"
+    },
+    "todo===63": {
+        "event": "order_event"
+    },
+    "todo===64": {
+        "event": "get_coins"
+    },
+    "todo===65": {
+        "event": "get_coins"
+    },
+    "todo===67": {
+        "event": "hiyachat_event"
+    },
+    "todo===68": {
+        "event": "hiyachat_event"
+    },
+    "todo===70": {
+        "event": "hiyachat_event"
+    },
+    "todo===71": {
+        "event": "hiyachat_event"
+    },
+    "todo===72": {
+        "event": "hiyachat_event"
+    },
+    "todo===73": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===74": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===75": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===76": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===77": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===78": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===79": {
+        "event": "show_wallet_page_new"
+    },
+    "todo===8": {
+        "event": "hiyachat_event"
+    },
+    "todo===81": {
+        "event": "hiyachat_event"
+    },
+    "todo===82": {
+        "event": "hiyachat_event"
+    },
+    "todo===84": {
+        "event": "hiyachat_event"
+    },
+    "todo===85": {
+        "event": "hiyachat_event"
+    },
+    "todo===86": {
+        "event": "hiyachat_event"
+    },
+    "todo===88": {
+        "event": "hiyachat_event"
+    },
+    "todo===89": {
+        "event": "hiyachat_event"
+    },
+    "todo===9": {
+        "event": "hiyachat_event"
+    },
+    "todo===90": {
+        "event": "hiyachat_event"
+    },
+    "todo===91": {
+        "event": "hiyachat_event"
+    },
+    "todo===93": {
+        "event": "hiyachat_event"
+    },
+    "todo===94": {
+        "event": "hiyachat_event"
+    },
+    "todo===95": {
+        "event": "hiyachat_event"
+    },
+    "todo===96": {
+        "event": "hiyachat_event"
+    },
+    "todo===98": {
+        "event": "hiyachat_event"
+    },
+    "todo===99": {
+        "event": "recharge_feedback"
+    }
+}

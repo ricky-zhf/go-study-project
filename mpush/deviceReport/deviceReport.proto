@@ -1,0 +1,28 @@
+syntax = "proto3";
+option go_package = "./;deviceReport";
+
+import "google/protobuf/struct.proto";
+
+// DeviceReportMessage 设备上报消息结构
+message DeviceReportMessage{
+  // 消息id
+  string msg_id = 1;
+  // 设备id
+  string uuid = 2;
+  // 产品码，paas为device_type
+  string product_code = 3;
+  // 事件发生时间点
+  int64 event_time = 4;
+  // 数据内容
+  google.protobuf.Struct data = 5;
+  // 消息类型
+  // DEVICE_REPORT 设备上报消息
+  // SYSTEM_NOTIFY 系统消息
+  string type = 6;
+  // 业务appId
+  int64 app_id = 8; // @gotags: validate:"required"
+  // 消息上报次数，兼容旧版本
+  string times = 9;
+  // carrier
+  bytes carrier = 10;
+}
